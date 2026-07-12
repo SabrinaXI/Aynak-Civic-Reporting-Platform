@@ -2,6 +2,7 @@
 Aynak is web application for reporting civic issues in the UAE. It lets citizens report issues such as street garbage, injured/dead animal on the street, broken lights, etc. It enables residents to report issues using AI-powered image recognition. It then tracks the reported issues through a review workflow with local authorities, and rewards civic participation through a points/voucher system sponsored by local businesses.
 
 
+
 ## System Architecture
 
 <p align="center">
