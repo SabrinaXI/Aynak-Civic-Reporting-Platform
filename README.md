@@ -86,38 +86,41 @@ docker run -d ^
    - **Realm Settings → Email → Password** — your Gmail App Password (only needed for Keycloak's own emails)
 
 ### 4. Configure and run the backend services
+The steps shown to set the enviornmental variables and to run the project are done in Eclipse IDE.
+This part assumes you have Spring Tools (aka Spring Tool Suite) installed from Eclipse Marketplace. Spring Tools allows to build and run SpringBoot projects in your Eclipse IDE.
 
-Set the required environment variables (Windows CMD example):
+ **Import the projects**
 
-```bash
-set DATABASE_PASSWORD=your_mysql_root_password
-set GEMINI_API_KEY=your_gemini_api_key
-set GMAIL_APP_PASSWORD=your_gmail_app_password
-```
+  1. `File → Import → Maven → Existing Maven Projects`
+  2. Browse to the `backend` folder and select all four modules (`service-registry`, `user-service`, `civic-service`, `api-gateway`)
+  → **Finish**.
 
-Start each service **in this order**, each in its own terminal, from its own folder:
+  **Set environment variables per service**
 
-```bash
-cd backend/service-registry
-mvnw.cmd spring-boot:run
-```
-```bash
-cd backend/user-service
-mvnw.cmd spring-boot:run
-```
-```bash
-cd backend/civic-service
-mvnw.cmd spring-boot:run
-```
-```bash
-cd backend/api-gateway
-mvnw.cmd spring-boot:run
-```
+  `user-service` needs `DATABASE_PASSWORD`. `civic-service` needs `DATABASE_PASSWORD`, `GEMINI_API_KEY`, and `GMAIL_APP_PASSWORD`.
+  Set these through a Run Configuration for each:
 
-(On macOS/Linux use `./mvnw spring-boot:run`.)
+  1. Right-click the service's main application class (e.g. `UserService2Application.java`) → `Run As → Run Configurations...`
+  2. Select **Spring Boot App** then click **New Configuration**.
+  3. Go to the **Environment** tab → **New** → add each variable name and value (e.g. `DATABASE_PASSWORD` =
+  `your_mysql_root_password`).
+  4. Click **Apply**.
 
-Wait for `service-registry` (port `8761`) to be up before starting the others.
+  Repeat for `civic-service`, adding all three variables it needs.
 
+  **Run the services, in this order**
+
+  Right-click each main class → `Run As → Spring Boot App` (or the Run Configuration you just created):
+
+  1. `ServiceRegistry2Application` (`service-registry`) — wait for it to fully start before continuing
+  2. `UserService2Application` (`user-service`)
+  3. `CivicService2Application` (`civic-service`)
+  4. `ApiGateway2Application` (`api-gateway`)
+
+  Each will run in its own **Console** tab within Eclipse. `service-registry` (Eureka) must be up first, since `user-service` and
+  `civic-service` register with it, and `api-gateway` needs them registered so it has somewhere to route requests.
+
+  
 ### 5. Run the frontend
 
 ```bash
