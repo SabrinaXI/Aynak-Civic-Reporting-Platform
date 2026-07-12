@@ -1,0 +1,713 @@
+
+
+/* ================= GLOBAL ================= */
+
+* {
+
+  box-sizing: border-box;
+
+}
+
+body {
+
+  background: rgb(0, 9, 20);
+
+  color: white;
+
+  font-family: "Alike", serif;
+
+  overflow-x: hidden;
+
+  line-height: 1.5;
+
+}
+
+/* ================= HERO SECTION ================= */
+
+.hero-section {
+
+  background-image: url("../assets/images/hero-desktop4.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  width: 100%;
+  height: 17rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+
+}
+
+.hero-overlay {
+
+  position: absolute;
+
+  inset: 0;
+
+  background: radial-gradient(
+
+    circle,
+
+    rgba(66, 255, 140, 0.08),
+
+    transparent 70%
+
+  );
+
+}
+
+.hero-content {
+
+  position: relative;
+
+  z-index: 2;
+
+}
+
+.hero-content h1 {
+
+  font-size: 1.9rem;
+
+  margin-bottom: 0.4rem;
+
+  font-weight: bold;
+
+}
+
+.hero-content p {
+
+  font-size: 0.74rem;
+
+  margin-bottom: 0.15rem;
+
+  color: rgba(255, 255, 255, 0.85);
+
+}
+
+/* ================= FILTER SECTION ================= */
+
+.filter-section {
+
+  width: 90%;
+
+  margin: -1.4rem auto 2rem auto;
+
+  position: relative;
+
+  z-index: 10;
+
+  background: rgba(15, 15, 15, 0.88);
+
+  border: 1px solid rgba(66, 255, 140, 0.15);
+
+  backdrop-filter: blur(0.8rem);
+
+  border-radius: 1.3rem;
+
+  padding: 1.1rem;
+
+}
+
+.filter-top {
+
+  display: flex;
+
+  gap: 1.1rem;
+
+  margin-bottom: 1.1rem;
+
+}
+
+.search-box,
+
+.category-box {
+
+  flex: 1;
+
+  min-width: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+  padding-bottom: 0.45rem;
+
+}
+
+.search-box input,
+
+.category-box select {
+
+  width: 100%;
+
+  min-width: 0;
+
+  background: transparent;
+
+  border: none;
+
+  outline: none;
+
+  color: white;
+
+  font-size: 0.72rem;
+
+  font-family: "Alike", serif;
+
+}
+
+.category-box select option {
+
+  background: #101010;
+
+}
+
+.cities-container {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 0.8rem;
+
+  margin-bottom: 1.1rem;
+
+}
+
+.cities-container label {
+
+  font-size: 0.64rem;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.35rem;
+
+}
+
+.cities-container input {
+
+  accent-color: #42ff8c;
+
+  width: 0.75rem;
+
+  height: 0.75rem;
+
+}
+
+.filter-buttons {
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 0.8rem;
+
+}
+
+.filter-buttons button {
+
+  width: 9rem;
+
+  height: 2.3rem;
+
+  border-radius: 3rem;
+
+  border: none;
+
+  cursor: pointer;
+
+  font-size: 0.68rem;
+
+  font-family: "Alike", serif;
+
+  transition: 0.3s;
+
+}
+
+#applyBtn {
+
+  background: #42ff8c;
+
+  color: black;
+
+}
+
+.clear-btn {
+
+  background: transparent;
+
+  border: 1px solid #42ff8c !important;
+
+  color: white;
+
+}
+
+/* ================= MAP + POSTS SECTION ================= */
+
+.dashboard-content {
+
+  width: 90%;
+
+  margin: 0 auto 4rem auto;
+
+  display: flex;
+
+  gap: 1.5rem;
+
+  align-items: stretch;
+
+}
+
+.map-panel,
+
+.posts-panel {
+
+  width: 50%;
+
+  background: rgba(15, 15, 15, 0.88);
+
+  border: 1px solid rgba(66, 255, 140, 0.15);
+
+  border-radius: 1.3rem;
+
+  padding: 1rem;
+
+  backdrop-filter: blur(0.8rem);
+
+}
+
+.map-panel h2,
+
+.posts-panel h2 {
+
+  font-size: 1rem;
+
+  margin-bottom: 0.8rem;
+
+  color: white;
+
+}
+
+/* ================= MAPBOX ================= */
+
+.map-wrapper {
+
+  width: 100%;
+
+  height: 32rem;
+
+}
+
+#dashboardMap {
+
+  width: 100%;
+
+  height: 100%;
+
+  border-radius: 1rem;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(66, 255, 140, 0.12);
+
+}
+
+
+/* ================= MAPBOX POPUP ================= */
+
+.mapboxgl-popup-content {
+
+  background: #0f0f0f;
+
+  color: white;
+
+  border: 1px solid rgba(66, 255, 140, 0.4);
+
+  border-radius: 12px;
+
+  font-family: "Alike", serif;
+
+}
+
+.mapboxgl-popup-content h3 {
+
+  color: #42ff8c;
+
+  margin: 0 0 8px 0;
+
+}
+
+.mapboxgl-popup-content p {
+
+  color: white;
+
+  margin: 4px 0;
+
+}
+ 
+
+/* ================= POSTS ================= */
+
+.posts-container {
+
+  width: 100%;
+
+  margin: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.8rem;
+
+  max-height: 33rem;
+
+  overflow-y: auto;
+
+}
+
+.posts-container::-webkit-scrollbar {
+
+  width: 0.4rem;
+
+}
+
+.posts-container::-webkit-scrollbar-thumb {
+
+  background: rgba(66, 255, 140, 0.3);
+
+  border-radius: 1rem;
+
+}
+
+.post-card {
+
+  width: 100%;
+  min-height: 9rem;
+  height: auto;
+
+  display: flex;
+
+  border-radius: 1.2rem;
+
+  overflow: hidden;
+
+  position: relative;
+
+  background: #0d0d0d;
+
+  border: 1px solid rgba(66, 255, 140, 0.1);
+
+}
+
+.post-left {
+
+  width: 45%;
+
+  padding: 1rem;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  background: linear-gradient(
+
+    to right,
+
+    rgba(23, 35, 23, 0.95),
+
+    rgba(23, 35, 23, 0.95),
+
+    rgba(0, 0, 0, 0),
+
+    rgba(0, 0, 0, 0.08)
+
+  );
+
+  backdrop-filter: blur(0.2rem);
+
+  z-index: 2;
+
+}
+
+.post-left h2 {
+
+  font-size: 0.82rem;
+
+  margin-bottom: 0.35rem;
+
+  line-height: 1.2;
+
+}
+
+.post-left p {
+
+  font-size: 0.52rem;
+
+  color: rgba(255, 255, 255, 0.8);
+
+  line-height: 1.35;
+
+}
+
+.post-info {
+
+  display: flex;
+
+  gap: 0.6rem;
+
+  margin-top: 0.6rem;
+
+  font-size: 0.46rem;
+
+  color: #42ff8c;
+
+}
+
+.post-info span {
+
+  color: #42ff8c;
+
+}
+
+.post-right {
+
+  width: 55%;
+
+  position: relative;
+
+  background-image: url("../assets/images/post-falcon-bg.png");
+
+  background-size: cover;
+
+  background-position: center;
+
+  background-repeat: no-repeat;
+
+}
+
+.post-right::after {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(
+
+    to left,
+
+    rgba(0, 0, 0, 0.12),
+
+    rgba(0, 0, 0, 0.72)
+
+  );
+
+}
+
+.read-more-btn {
+
+  position: absolute;
+
+  bottom: 0.7rem;
+
+  right: 0.7rem;
+
+  z-index: 3;
+
+  width: 5.5rem;
+
+  height: 1.9rem;
+
+  border-radius: 3rem;
+
+  border: 1px solid #42ff8c;
+
+  background: rgba(0, 0, 0, 0.55);
+
+  color: white;
+
+  font-size: 0.58rem;
+
+  font-family: "Alike", serif;
+
+  cursor: pointer;
+
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media screen and (max-width: 768px) {
+
+  .dashboard-content {
+
+    flex-direction: column;
+
+  }
+
+  .map-panel,
+
+  .posts-panel {
+
+    width: 100%;
+
+  }
+
+  .map-wrapper {
+
+    height: 18rem;
+
+  }
+
+  .hero-section {
+
+    height: 17rem;
+
+    padding: 0.8rem;
+
+    background-image: url("../assets/images/hero-mobile.jpg");
+    background-size: 100% 100%;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+  }
+
+  .hero-content h1 {
+
+    font-size: 1.35rem;
+
+  }
+
+  .hero-content p {
+
+    font-size: 0.66rem;
+
+  }
+
+  .filter-section {
+
+    width: 92%;
+
+    padding: 0.9rem;
+
+    margin-top: -1rem;
+
+    border-radius: 1rem;
+
+  }
+
+  .filter-top {
+
+    flex-direction: column;
+
+    gap: 0.8rem;
+
+  }
+
+  .search-box input,
+
+  .category-box select {
+
+    font-size: 0.68rem;
+
+  }
+
+  .cities-container {
+
+    gap: 0.55rem;
+
+  }
+
+  .cities-container label {
+
+    font-size: 0.58rem;
+
+  }
+
+  .filter-buttons {
+
+    flex-direction: column;
+
+    align-items: center;
+
+  }
+
+  .filter-buttons button {
+
+    width: 100%;
+
+    height: 2.2rem;
+
+    font-size: 0.66rem;
+
+  }
+
+  .post-card {
+
+    height: 8.8rem;
+
+  }
+
+  .post-left {
+
+    width: 55%;
+
+    padding: 0.7rem;
+
+  }
+
+  .post-right {
+
+    width: 45%;
+
+  }
+
+  .post-left h2 {
+
+    font-size: 0.78rem;
+
+  }
+
+  .post-left p {
+
+    font-size: 0.54rem;
+
+  }
+
+  .post-info {
+
+    font-size: 0.5rem;
+
+    flex-wrap: wrap;
+
+  }
+
+  .read-more-btn {
+
+    width: 4.8rem;
+
+    height: 1.7rem;
+
+    font-size: 0.5rem;
+
+    right: 0.5rem;
+
+    bottom: 0.5rem;
+
+  }
+
+}
+ 

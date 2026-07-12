@@ -1,0 +1,163 @@
+.authority-profile-page {
+  min-height: 100vh;
+
+  background: rgb(0, 9, 20);
+
+  color: white;
+
+  padding-bottom: 4rem;
+}
+
+.authority-profile-hero {
+  width: 90%;
+
+  margin: 1.5rem auto;
+
+  min-height: 12rem;
+
+  border-radius: 1.5rem;
+
+  background: linear-gradient(
+    135deg,
+    rgba(15, 35, 50, 0.95),
+    rgba(5, 14, 24, 0.95)
+  );
+
+  border: 1px solid rgba(66, 255, 140, 0.18);
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding: 2rem;
+}
+
+.authority-profile-hero h1 {
+  color: #42ff8c;
+
+  font-size: 2rem;
+
+  margin-bottom: 0.5rem;
+}
+
+.authority-profile-hero p {
+  color: rgba(255, 255, 255, 0.8);
+
+  font-size: 0.9rem;
+}
+
+.authority-profile-card {
+  width: 90%;
+
+  margin: 0 auto;
+
+  background: rgba(15, 15, 15, 0.9);
+
+  border: 1px solid rgba(66, 255, 140, 0.15);
+
+  border-radius: 1.3rem;
+
+  padding: 1.5rem;
+}
+
+.authority-profile-header {
+  display: flex;
+
+  align-items: center;
+
+  gap: 1rem;
+
+  margin-bottom: 2rem;
+}
+
+.authority-avatar {
+  width: 4.5rem;
+
+  height: 4.5rem;
+
+  border-radius: 50%;
+
+  background: #42ff8c;
+
+  color: black;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  font-size: 1.4rem;
+
+  font-weight: bold;
+}
+
+.authority-profile-header h2 {
+  font-size: 1.4rem;
+}
+
+.authority-profile-header p {
+  color: rgba(255, 255, 255, 0.7);
+
+  font-size: 0.85rem;
+}
+
+.authority-profile-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 1rem;
+}
+
+.profile-field {
+  background: rgba(255, 255, 255, 0.04);
+
+  border: 1px solid rgba(66, 255, 140, 0.12);
+
+  border-radius: 1rem;
+
+  padding: 1rem;
+}
+
+.profile-field span,
+.authority-description span {
+  color: #42ff8c;
+
+  font-size: 0.75rem;
+}
+
+.profile-field p,
+.authority-description p {
+  margin-top: 0.4rem;
+
+  font-size: 0.85rem;
+
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.authority-description {
+  margin-top: 1rem;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  border: 1px solid rgba(66, 255, 140, 0.12);
+
+  border-radius: 1rem;
+
+  padding: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .authority-profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .authority-profile-header {
+    flex-direction: column;
+
+    text-align: center;
+  }
+}

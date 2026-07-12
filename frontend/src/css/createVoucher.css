@@ -1,0 +1,85 @@
+.create-voucher-page {
+  min-height: 100vh;
+  background: rgb(0, 9, 20);
+  color: white;
+  padding-bottom: 4rem;
+}
+
+.create-voucher-hero {
+  width: 90%;
+  margin: 1.5rem auto;
+  min-height: 12rem;
+  border-radius: 1.5rem;
+  background: linear-gradient(135deg, rgba(15, 35, 50, 0.95), rgba(5, 14, 24, 0.95));
+  border: 1px solid rgba(66, 255, 140, 0.18);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.create-voucher-hero h1 {
+  color: #42ff8c;
+  font-size: 2rem;
+  margin-bottom: 0.6rem;
+}
+
+.create-voucher-hero p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+}
+
+.voucher-form-section {
+  width: 45%;
+  margin: 0 auto;
+}
+
+.voucher-form {
+  background: rgba(15, 15, 15, 0.9);
+  border: 1px solid rgba(66, 255, 140, 0.18);
+  border-radius: 1.3rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.voucher-form label {
+  font-size: 0.75rem;
+  color: #42ff8c;
+}
+
+.voucher-form input,
+.voucher-form textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 1rem;
+  padding: 0.75rem 1rem;
+  font-family: "Alike", serif;
+  background: rgba(255, 255, 255, 0.92);
+  color: black;
+}
+
+.voucher-form textarea {
+  min-height: 7rem;
+  resize: vertical;
+}
+
+.voucher-form button {
+  margin-top: 0.7rem;
+  height: 2.8rem;
+  border: none;
+  border-radius: 2rem;
+  background: #42ff8c;
+  color: black;
+  font-family: "Alike", serif;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .voucher-form-section {
+    width: 90%;
+  }
+}

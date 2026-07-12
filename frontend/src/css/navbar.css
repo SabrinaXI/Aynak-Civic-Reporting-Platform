@@ -1,0 +1,95 @@
+.navbar {
+ width: 100%;
+ height: 50px;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding: 0 30px;
+ box-sizing: border-box;
+ position: sticky;
+ top: 0;
+ z-index: 1000;
+ background: rgba(0, 0, 0, 0.78);
+ backdrop-filter: blur(12px);
+ border-bottom: 1px solid rgba(66, 255, 140, 0.12);
+}
+
+.nav-left {
+  display: flex;
+
+  align-items: center;
+}
+
+.navbar-logo {
+  width: 42px;
+  height: 37px;
+}
+
+.nav-center {
+  display: flex;
+
+  align-items: center;
+
+  gap: 25px;
+}
+
+.nav-center a {
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 0.9rem;
+
+  transition: 0.3s;
+}
+
+.nav-center a:hover {
+  color: #42ff8c;
+}
+
+.nav-right {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+.icon-circle,
+.profile-circle {
+  width: 32px;
+  height: 32px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(66, 255, 140, 0.6);
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  cursor: pointer;
+
+  overflow: hidden;
+}
+
+.icon-circle img,
+.profile-circle img {
+ width: 20px;
+ height: 20px;
+ object-fit: contain;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-center {
+    display: none;
+  }
+
+  .navbar {
+    padding: 0 15px;
+  }
+}

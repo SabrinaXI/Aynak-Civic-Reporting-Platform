@@ -1,0 +1,213 @@
+.profile-page {
+  min-height: 100vh;
+
+  background-image: url("../assets/images/profileBG.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: white;
+  padding-bottom: 5rem;
+}
+
+.profile-banner {
+  width: 60%;
+
+  height: 10rem;
+
+  margin: 1.4rem auto 0 auto;
+
+  background-size: 100% 100%;
+
+  background-position: center;
+
+  background-repeat: no-repeat;
+
+  border-radius: 1.5rem;
+
+  border: 1px solid rgba(66, 255, 140, 0.15);
+}
+
+.profile-main {
+  width: 90%;
+
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+.profile-avatar {
+  width: 5.5rem;
+
+  height: 5.5rem;
+
+  margin: -2.75rem auto 0 auto;
+
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.profile-name-row {
+  margin-top: 1rem;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 1rem;
+}
+
+.profile-name-row h1 {
+  font-size: 1.35rem;
+}
+
+.edit-profile-btn {
+  padding: 0.45rem 1rem;
+
+  border-radius: 2rem;
+
+  border: 1px solid #42ff8c;
+
+  background: rgba(66, 255, 140, 0.12);
+
+  color: #42ff8c;
+
+  font-family: "Alike", serif;
+
+  cursor: pointer;
+}
+
+.profile-content {
+  width: 84%;
+  margin: 2.5rem auto 0 auto;
+
+  display: flex;
+
+  gap: 1.8rem;
+
+  align-items: flex-start;
+}
+
+.profile-card {
+  flex: 1;
+
+  background: rgba(15, 15, 15, 0.9);
+
+  border: 1px solid rgba(66, 255, 140, 0.15);
+
+  border-radius: 1.3rem;
+
+  padding: 1.1rem;
+
+  text-align: left;
+
+  backdrop-filter: blur(0.8rem);
+}
+
+.profile-card h2 {
+  font-size: 1rem;
+
+  margin-bottom: 1.2rem;
+
+  color: #42ff8c;
+}
+
+.profile-field,
+.overview-row {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 1rem;
+
+  padding: 0.5rem 0;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.profile-field span,
+.overview-row span {
+  color: rgba(255, 255, 255, 0.65);
+
+  font-size: 0.75rem;
+}
+
+.profile-field p,
+.overview-row p {
+  color: white;
+
+  font-size: 0.8rem;
+
+  text-align: right;
+}
+
+.overview-card {
+  max-width: 28rem;
+}
+
+@media screen and (max-width: 768px) {
+  .profile-banner {
+    width: 92%;
+
+    height: 11rem;
+
+    margin-top: 1rem;
+  }
+
+  .profile-avatar {
+    width: 5.8rem;
+
+    height: 5.8rem;
+
+    margin-top: -2.9rem;
+
+    font-size: 2.2rem;
+  }
+
+  .profile-name-row {
+    flex-direction: column;
+
+    gap: 0.7rem;
+  }
+
+  .profile-name-row h1 {
+    font-size: 1.35rem;
+  }
+
+  .profile-content {
+    flex-direction: column;
+
+    gap: 1.2rem;
+  }
+
+  .profile-card,
+  .overview-card {
+    width: 100%;
+
+    max-width: none;
+  }
+
+  .profile-field,
+  .overview-row {
+    flex-direction: column;
+
+    gap: 0.25rem;
+  }
+
+  .profile-field p,
+  .overview-row p {
+    text-align: left;
+  }
+}

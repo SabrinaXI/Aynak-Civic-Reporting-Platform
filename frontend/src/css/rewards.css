@@ -1,0 +1,354 @@
+.rewards-page {
+  min-height: 100vh;
+
+  width: 92%;
+
+  margin: 1rem auto 3rem auto;
+
+  color: white;
+}
+
+.rewards-banner {
+  width: 100%;
+
+  min-height: 16rem;
+
+  border-radius: 1.2rem;
+
+  overflow: hidden;
+
+  background-size: cover;
+
+  background-position: center;
+
+  background-repeat: no-repeat;
+
+  border: 1px solid rgba(66, 255, 140, 0.18);
+
+  display: flex;
+
+  align-items: center;
+}
+
+.banner-content {
+  padding-left: 2.2rem;
+}
+
+.banner-content h1 {
+  font-size: 2.1rem;
+
+  line-height: 1.2;
+
+  max-width: 28rem;
+}
+
+.banner-content h1 span {
+  color: #42ff8c;
+}
+
+.points-box {
+  margin-top: 1.2rem;
+}
+
+.points-box p {
+  font-size: 0.68rem;
+
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.points-box h2 {
+  color: #42ff8c;
+
+  font-size: 1.3rem;
+
+  margin-top: 0.15rem;
+}
+
+.rewards-header {
+  margin: 1.5rem 0 0.8rem 0;
+}
+
+.rewards-header h2 {
+  font-size: 1.35rem;
+}
+
+.rewards-header p {
+  margin-top: 0.25rem;
+
+  font-size: 0.75rem;
+
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.voucher-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.8rem;
+}
+
+.voucher-card {
+  min-height: 7rem;
+
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns: 10rem 0.1rem 1fr 11rem;
+
+  align-items: center;
+
+  gap: 1.2rem;
+
+  padding: 1rem 1.4rem;
+
+  border-radius: 1rem;
+
+  background: rgba(6, 25, 42, 0.92);
+
+  border: 1px solid rgba(66, 255, 140, 0.16);
+
+  overflow: hidden;
+}
+
+.voucher-card::before,
+.voucher-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 1.2rem;
+
+  height: 1.2rem;
+
+  background: #010d16;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(66, 255, 140, 0.18);
+
+  top: 50%;
+
+  transform: translateY(-50%);
+}
+
+.voucher-card::before {
+  left: -0.6rem;
+}
+
+.voucher-card::after {
+  right: -0.6rem;
+}
+
+.voucher-brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.8rem;
+}
+
+.voucher-brand img {
+  width: 3.2rem;
+
+  height: 3.2rem;
+
+  object-fit: contain;
+
+  border-radius: 50%;
+
+  background: white;
+
+  padding: 0.3rem;
+}
+
+.voucher-brand h3 {
+  color: #42ff8c;
+
+  font-size: 0.9rem;
+
+  line-height: 1.2;
+}
+
+.voucher-divider {
+  height: 100%;
+
+  border-left: 1px dashed #42ff8c;
+
+  opacity: 0.75;
+}
+
+.voucher-details h2 {
+  font-size: 0.95rem;
+
+  margin-bottom: 0.25rem;
+}
+
+.voucher-details p {
+  font-size: 0.68rem;
+
+  color: rgba(255, 255, 255, 0.75);
+
+  margin-bottom: 0.5rem;
+}
+
+.voucher-code {
+  width: 20rem;
+
+  height: 1.8rem;
+
+  border-radius: 0.3rem;
+
+  border: 1px dashed rgba(66, 255, 140, 0.55);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding-left: 0.8rem;
+
+  overflow: hidden;
+}
+
+.voucher-code span {
+  font-size: 0.7rem;
+
+  letter-spacing: 0.08rem;
+
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.voucher-code button {
+  height: 100%;
+
+  width: 3.5rem;
+
+  border: none;
+
+  background: rgba(255, 255, 255, 0.9);
+
+  color: #010d16;
+
+  font-size: 0.65rem;
+
+  font-family: "Alike", serif;
+
+  cursor: pointer;
+}
+
+.voucher-action {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 0.6rem;
+}
+
+.voucher-action button {
+  width: 9rem;
+
+  height: 2.3rem;
+
+  border-radius: 2rem;
+
+  border: 1px solid #42ff8c;
+
+  background: transparent;
+
+  color: #42ff8c;
+
+  font-size: 0.7rem;
+
+  font-family: "Alike", serif;
+
+  cursor: pointer;
+
+  text-transform: uppercase;
+}
+
+.voucher-action button:hover {
+  background: #42ff8c;
+
+  color: #010d16;
+}
+
+.voucher-action p {
+  font-size: 0.7rem;
+
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.redeemed-title {
+  margin-top: 2.2rem;
+}
+
+.redeemed-card {
+  opacity: 0.95;
+}
+
+.no-redeemed {
+  color: rgba(255, 255, 255, 0.75);
+
+  font-size: 0.8rem;
+}
+
+.hidden-code {
+  justify-content: center;
+
+  padding-left: 0;
+}
+
+.hidden-code span {
+  letter-spacing: 0;
+
+  color: rgba(255, 255, 255, 0.65);
+}
+
+@media screen and (max-width: 768px) {
+  .rewards-page {
+    width: 92%;
+
+    margin-top: 1rem;
+
+    padding-bottom: 4rem;
+  }
+
+  .rewards-banner {
+    min-height: 16rem;
+  }
+
+  .banner-content {
+    padding: 1.2rem;
+  }
+
+  .banner-content h1 {
+    font-size: 1.6rem;
+  }
+
+  .voucher-card {
+    grid-template-columns: 1fr;
+
+    gap: 1rem;
+  }
+
+  .voucher-divider {
+    display: none;
+  }
+
+  .voucher-code {
+    width: 100%;
+  }
+
+  .voucher-action {
+    align-items: stretch;
+  }
+
+  .voucher-action button {
+    width: 100%;
+  }
+}

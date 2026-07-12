@@ -1,0 +1,15 @@
+.loading-screen {
+  min-height: 100vh;
+  background-image: url("../assets/images/loadingBG.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loading-screen h2 {
+  color: white;
+  font-family: "Alike", serif;
+  font-size: 2rem;
+}

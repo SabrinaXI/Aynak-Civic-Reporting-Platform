@@ -1,0 +1,85 @@
+.analytics-page {
+  width: 82%;
+
+  margin: auto;
+
+  padding-bottom: 1rem;
+}
+
+.analytics-hero {
+  text-align: center;
+
+  margin: 0.8rem 0 1rem 0;
+}
+
+.analytics-hero h1 {
+  font-size: 1.4rem;
+
+  margin-bottom: 0.25rem;
+
+  color: #42ff8c;
+}
+
+.analytics-hero p {
+  color: rgba(255, 255, 255, 0.8);
+
+  font-size: 0.72rem;
+}
+
+.analytics-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 0.8rem;
+}
+
+.chart-card {
+  background: rgba(15, 15, 15, 0.9);
+
+  border: 1px solid rgba(66, 255, 140, 0.15);
+
+  border-radius: 1rem;
+
+  padding: 0.55rem;
+
+  backdrop-filter: blur(10px);
+}
+
+.chart-card h2 {
+  font-size: 0.78rem;
+
+  text-align: center;
+
+  margin-bottom: 0.2rem;
+
+  color: white;
+}
+
+.recharts-legend-wrapper {
+  font-size: 0.65rem;
+}
+
+.recharts-legend-item-text {
+  color: white !important;
+}
+
+.recharts-cartesian-axis-tick-value {
+  fill: white;
+
+  font-size: 0.65rem;
+}
+
+.recharts-cartesian-grid line {
+  stroke: rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 768px) {
+  .analytics-page {
+    width: 92%;
+  }
+
+  .analytics-grid {
+    grid-template-columns: 1fr;
+  }
+}
