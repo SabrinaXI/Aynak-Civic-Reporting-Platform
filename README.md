@@ -15,6 +15,8 @@ The system follows a microservice architecture consisting of:
 - **User Service** – Manages authentication, authorization, and user profiles.
 - **Civic Service** – Handles reports, rewards, AI processing, and notifications.
 
+The microservices communicate with each other using HTTP REST API. 
+
  **Note:** This diagram shows the target/full architecture for the project. The code in this repository is not the final version —
   it does not yet include the FastAPI AI Backend (image processing, incident categorisation, and incident urgency agents).
   AI-assisted report analysis in this version is handled directly by civic-service calling the Gemini API.
