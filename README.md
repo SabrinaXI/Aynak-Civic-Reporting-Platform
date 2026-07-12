@@ -7,6 +7,7 @@ Aynak is web application for reporting civic issues in the UAE. It lets citizens
 <p align="center">
 <img src="docs/architecture.png" alt="Aynak System Architecture" width="900">
 </p>
+
 **Note:** This diagram shows the target/full architecture for the project. The code in this repository is not the final version —
   it does **not** yet include the **FastAPI AI Backend** (image processing, incident categorisation, and incident urgency agents).
   AI-assisted report analysis in this version is handled directly by `civic-service` calling the Gemini API. 
