@@ -28,7 +28,7 @@ The system follows a microservice architecture consisting of:
 
 **Frontend**
 - React 19, Vite 8, React Router 7
-- `keycloak-js` — OIDC/PKCE authentication
+- keycloak-js — OIDC/PKCE authentication
 - Mapbox GL — Map for report locations
 - Recharts — analytics dashboards
 
@@ -41,11 +41,11 @@ The system follows a microservice architecture consisting of:
 ## Prerequisites
 - Java 21
 - Node.js 18+ and npm
-- MySQL 8 running locally on port `3306`
+- MySQL 8 running locally on port 3306
 - Docker Desktop (for Keycloak)
 - A Google Gemini API key
 - A Mapbox access token
-- A Gmail account with an **App Password** generated
+- A Gmail account with an App Password generated
 
 ## Setup & Run Guide
 
@@ -73,7 +73,7 @@ docker run -d ^
   start-dev
 ```
 
-> The `^` line continuations are for Windows CMD. On macOS/Linux, replace `^` with `\`.
+> The ^ line continuations are for Windows CMD. On macOS/Linux, replace ^ with \.
 
 
 ### 3. Import the realm
