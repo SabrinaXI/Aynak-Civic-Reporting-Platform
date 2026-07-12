@@ -12,28 +12,9 @@ Aynak is web application for reporting civic issues in the UAE. It lets citizens
 
 ## System Architecture
 
-```mermaid
-graph TD
-    Browser["React SPA (Vite, :5173)"] -->|OIDC login| Keycloak["Keycloak (:8082)<br/>realm: aynak"]
-    Browser -->|REST + Bearer JWT| Gateway["API Gateway (:8765)"]
-
-    Gateway -->|/api/users/**| UserService["User Service (:8090)"]
-    Gateway -->|/api/reports,/rewards,/notifications,/ai-reports| CivicService["Civic Service (:8095)"]
-
-    Gateway -.->|service discovery| Eureka["Service Registry / Eureka (:8761)"]
-    UserService -.-> Eureka
-    CivicService -.-> Eureka
-
-    UserService -->|JPA| UserDB[("MySQL: user2_db")]
-    CivicService -->|JPA| CivicDB[("MySQL: civic2_db")]
-
-    CivicService -->|Feign| UserService
-    CivicService -->|AI report analysis| Gemini["Google Gemini API"]
-    CivicService -->|email notifications| Gmail["Gmail SMTP"]
-
-    UserService -.->|validates JWT| Keycloak
-    CivicService -.->|validates JWT| Keycloak
-```
+<p align="center">
+<img src="docs/architecture.png" alt="Aynak System Architecture" width="900">
+</p>
 
 - The API Gateway only routes requests — each microservice independently validates the JWT against Keycloak.
 - Services register with Eureka so the gateway and services can find each other without hardcoded URLs.
