@@ -1,14 +1,6 @@
 # Aynak — Civic Reporting Platform
 Aynak is web application for reporting civic issues in the UAE. It lets citizens report issues such as street garbage, broken lights, injured/dead animal on the street. It enables residents to report issues using AI-powered image recognition. It then tracks the reported issues through a review workflow with local authorities, and rewards civic participation through a points/voucher system sponsored by local businesses.
 
-## Table of Contents
-- [System Architecture](#system-architecture)
-- [Tech Stack](#tech-stack)
-- [Features](#features)
-- [Prerequisites](#prerequisites)
-- [Setup & Run Guide](#setup--run-guide)
-- [Environment Variables](#environment-variables)
-- [Troubleshooting](#troubleshooting)
 
 ## System Architecture
 
@@ -16,65 +8,40 @@ Aynak is web application for reporting civic issues in the UAE. It lets citizens
 <img src="docs/architecture.png" alt="Aynak System Architecture" width="900">
 </p>
 
-- The API Gateway only routes requests — each microservice independently validates the JWT against Keycloak.
-- Services register with Eureka so the gateway and services can find each other without hardcoded URLs.
+The system follows a microservice architecture consisting of:
+- **API Gateway** – Routes client requests to the appropriate microservices. It only routes requests, each microservice independently validates the JWT against Keycloak.
+- **Service Registry (Eureka)** – Provides service discovery where initially services register themselves with Eureka so the gateway and services can find each other without hardcoded URLs.
+- **User Service** – Manages authentication, authorization, and user profiles.
+- **Civic Service** – Handles reports, rewards, AI processing, and notifications.
+ 
 
 ## Tech Stack
 
 **Backend**
-- Java 21, Spring Boot 4.0.6, Spring Cloud 2025.1.1
+- Spring Boot 4.0.6, Java 21, Spring Cloud 2025.1.1
 - Spring Cloud Gateway (WebMVC), Netflix Eureka, OpenFeign
 - Spring Security OAuth2 Resource Server (JWT validation against Keycloak)
-- Spring Data JPA + MySQL
-- Google Gemini API — AI-assisted report analysis
-- Jakarta Mail (Gmail SMTP) — email notifications
 
 **Frontend**
 - React 19, Vite 8, React Router 7
 - `keycloak-js` — OIDC/PKCE authentication
-- Mapbox GL — interactive maps for report locations
+- Mapbox GL — Map for report locations
 - Recharts — analytics dashboards
 
 **Identity & Infra**
-- Keycloak (realm-based OIDC provider, Google login federation, role-based access)
+- Keycloak (realm-based OIDC provider, role-based access, Google login)
 - MySQL 8
 - Docker (Keycloak container)
 
-## Features
-
-**Citizen**
-- Submit civic issue reports with photos and location
-- AI-assisted report analysis via Gemini
-- View, track, and delete their own reports
-- Earn points, view the leaderboard and their own rank
-- Redeem points for sponsor-provided rewards/vouchers
-- In-app notifications
-- Profile management
-
-**Authority**
-- Review pending reports; approve, reject, mark in-progress, or resolved
-- View all approved reports
-- Category/status analytics dashboards
-
-**Sponsor**
-- Create and manage reward vouchers
-
-**Admin**
-- Elevated access across report management
-
-**Cross-cutting**
-- Google login via Keycloak, alongside username/password
-- Role-based access on both frontend and backend
 
 ## Prerequisites
-
-- Java 21 (each backend module includes the Maven Wrapper, so a local Maven install isn't required)
+- Java 21
 - Node.js 18+ and npm
 - MySQL 8 running locally on port `3306`
 - Docker Desktop (for Keycloak)
 - A Google Gemini API key
-- A Gmail account with an **App Password** generated (not your normal Gmail password)
-- A Mapbox account/public access token
+- A Mapbox access token
+- A Gmail account with an **App Password** generated
 
 ## Setup & Run Guide
 
@@ -85,7 +52,7 @@ CREATE DATABASE user2_db;
 CREATE DATABASE civic2_db;
 ```
 
-Both services connect as `root` to `localhost:3306`; tables are created automatically on first run.
+Tables are created automatically on first run.
 
 ### 2. Start Keycloak in Docker
 
@@ -96,15 +63,14 @@ docker run -d ^
   --name keycloakcontain2 ^
   -p 8082:8080 ^
   -v keycloak2_data:/opt/keycloak/data ^
-  -e KEYCLOAK_ADMIN=sabrina-admin ^
-  -e KEYCLOAK_ADMIN_PASSWORD=admin ^
+  -e KEYCLOAK_ADMIN=your_admin_username ^
+  -e KEYCLOAK_ADMIN_PASSWORD=your_admin_password ^
   quay.io/keycloak/keycloak:latest ^
   start-dev
 ```
 
 > The `^` line continuations are for Windows CMD. On macOS/Linux, replace `^` with `\`.
->
-> Change the admin username/password if this is ever exposed beyond your machine.
+
 
 ### 3. Import the realm
 
@@ -185,10 +151,3 @@ Open `http://localhost:5173`.
 | `VITE_KEYCLOAK_REALM` | frontend | Keycloak realm (`aynak`) |
 | `VITE_KEYCLOAK_CLIENT_ID` | frontend | Keycloak SPA client (`aynak-spa`) |
 | `VITE_API_BASE_URL` | frontend | API Gateway URL (`http://localhost:8765`) |
-
-## Troubleshooting
-
-- **Keycloak login not completing on Windows:** Open **Control Panel → Internet Options → Advanced tab → Security section**, and uncheck **"Check for server certificate revocation"**.
-- **Gateway returns 404 / can't reach a service:** Confirm `service-registry` is running first and check its dashboard at `http://localhost:8761`.
-- **401/403 from the backend:** Confirm your Keycloak realm's issuer matches `http://localhost:8082/realms/aynak`, and that you re-entered the Google IdP secret if using Google login.
-
