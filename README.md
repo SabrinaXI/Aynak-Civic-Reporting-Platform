@@ -145,7 +145,7 @@ Open `http://localhost:5173`.
 |---|---|---|
 | `DATABASE_PASSWORD` | user-service, civic-service | MySQL `root` password |
 | `GEMINI_API_KEY` | civic-service | Google Gemini API key for AI report analysis |
-| `GMAIL_APP_PASSWORD` | civic-service | Gmail App Password for `aynaksupport@gmail.com` |
+| `GMAIL_APP_PASSWORD` | civic-service | Gmail App Password for email notifications |
 | `VITE_MAPBOX_TOKEN` | frontend | Mapbox public access token |
 | `VITE_KEYCLOAK_URL` | frontend | Keycloak base URL (`http://localhost:8082`) |
 | `VITE_KEYCLOAK_REALM` | frontend | Keycloak realm (`aynak`) |
